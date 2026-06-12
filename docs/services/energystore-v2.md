@@ -97,7 +97,7 @@ Subscribes (multi-replica capable) to:
 | `ESV2_MQTT_QOS` | `1` |
 
 !!! note "MQTT-5 Shared Subscriptions need paho.golang"
-    v2 uses `github.com/eclipse/paho.golang` (MQTT 5). An earlier attempt with `paho.mqtt.golang v1` (MQTT 3.1.1) failed: Mosquitto silently accepts `$share/…` subscribes from a 3.1.1 client but never matches a publish to them. See also the [mosquitto operational notes](mosquitto.md#mqtt-5-vs-311--shared-subscriptions-caveat).
+    v2 uses `github.com/eclipse/paho.golang` (MQTT 5). An earlier attempt with `paho.mqtt.golang v1` (MQTT 3.1.1) failed: Mosquitto silently accepts `$share/…` subscribes from a 3.1.1 client but never matches a publish to them. See also the [mosquitto operational notes](mosquitto.md#mqtt-5-vs-311-shared-subscriptions-caveat).
 
     Also: MQTT 5 §4.8.2 forbids `NoLocal=true` on Shared Subscriptions — the v2 subscriber sets it to `false`. Earlier dev versions had `NoLocal=true` and were disconnected by Mosquitto with `reason_code=130 (Protocol Error)`.
 
